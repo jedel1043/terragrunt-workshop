@@ -110,4 +110,22 @@ tofu -chdir=live/prod init
 tofu -chdir=live/prod apply
 ```
 
+This will deploy a "production" plan very similar to the "development" plan.
+
 ## Level 4 - Terragrunt
+
+Run Terragrunt against all subdirectores with a `terragrunt.hcl` file:
+
+```bash
+terragrunt run --all plan
+```
+
+If everything is correct, this should output 0 changes in our two deployments.
+
+It can also be run in directories matching a pattern:
+
+```bash
+terragrunt run --all --queue-include-dir dev plan # Only runs in dev
+```
+
+## And that's it!
