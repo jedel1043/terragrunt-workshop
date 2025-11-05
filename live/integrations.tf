@@ -1,15 +1,15 @@
 // https://registry.terraform.io/providers/juju/juju/latest/docs/resources/integration
 resource "juju_integration" "slurmd-to-slurmctld" {
-  for_each   = juju_application.slurmd
+  for_each   = module.slurmd.partitions
   model_uuid = juju_model.this.uuid
 
   application {
-    name     = each.value.name
-    endpoint = "slurmctld"
+    name     = each.value.app_name
+    endpoint = each.value.endpoints.slurmctld
   }
 
   application {
-    name     = juju_application.slurmctld.name
-    endpoint = "slurmd"
+    name     = module.slurmctld.app_name
+    endpoint = module.slurmctld.endpoints.slurmd
   }
 }

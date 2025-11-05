@@ -1,8 +1,7 @@
-// https://registry.terraform.io/providers/juju/juju/latest/docs/resources/application
 resource "juju_application" "slurmd" {
   for_each   = var.partitions
   name       = each.key
-  model_uuid = juju_model.this.uuid
+  model_uuid = var.model_uuid
 
   charm {
     name    = "slurmd"

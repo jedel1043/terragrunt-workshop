@@ -1,0 +1,13 @@
+module "slurmctld" {
+  source      = "../catalog/modules/slurmctld"
+  model_uuid  = juju_model.this.uuid
+  app_name    = var.controller.app_name
+  config      = var.controller.config
+  constraints = var.controller.constraints
+}
+
+module "slurmd" {
+  source     = "../catalog/modules/slurmd"
+  model_uuid = juju_model.this.uuid
+  partitions = var.partitions
+}
