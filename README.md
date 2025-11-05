@@ -63,6 +63,25 @@ create all the defined resources.
 
 ## Level 2 - Terraform modules
 
+Checkout the `level-2` branch:
+
+```bash
+git checkout level-2
+```
+
+And apply the newly refactored modules.
+
+```bash
+tofu -chdir=live init
+tofu -chdir=live apply
+```
+
+If everything goes according to plan, `OpenTofu` should report:
+
+```bash
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+```
+
 ## Level 3 - Two deployments
 
 ## Level 4 - Terragrunt
