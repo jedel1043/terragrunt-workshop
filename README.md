@@ -84,4 +84,30 @@ Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
 
 ## Level 3 - Two deployments
 
+Checkout the `level-3` branch:
+
+```bash
+git checkout level-3
+```
+
+And refresh the old development deployment:
+
+```bash
+tofu -chdir=live/dev init
+tofu -chdir=live/dev apply
+```
+
+If everything goes according to plan, `OpenTofu` should report:
+
+```bash
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+```
+
+Similarly, apply the newly created production deployment:
+
+```bash
+tofu -chdir=live/prod init
+tofu -chdir=live/prod apply
+```
+
 ## Level 4 - Terragrunt
