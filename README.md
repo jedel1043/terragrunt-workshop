@@ -128,4 +128,8 @@ It can also be run in directories matching a pattern:
 terragrunt run --all --queue-include-dir dev plan # Only runs in dev
 ```
 
-## And that's it!
+## Further reading
+
+- [When to write a (Terraform) module](https://opentofu.org/docs/language/modules/develop/#when-to-write-a-module)
+- [Terragrunt Stacks](https://terragrunt.gruntwork.io/docs/features/stacks/)
+- [Terragrunt Tutorial - Getting Started & Examples](https://spacelift.io/blog/terragrunt)
