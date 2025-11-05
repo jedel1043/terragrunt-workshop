@@ -1,0 +1,4 @@
+# TF specifc ignores
+
+.terraform
+*.tfstate*
